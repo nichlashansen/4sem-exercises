@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body><section class="dashboard">
+    <div class="dashboard--content container">
+        <heading class="dashbaord--content__heading">
+            <h1>EC Schedule Dashboard</h1>
+        </heading>
+        <div class="grid grid-1x3">
+            <div>
+                <h2>På kontoret</h2>
+                <div class="grid grid-1x2 employeeCard employeeCard__Available">
+                    <picture>
+                        <source type="image/webp" srcset="images/employee1.webp">
+                        <source type="image/jpeg" srcset="images/employee1.jpg">
+                        <img class="employeeCard__Image" src="images/employee1.jpg" alt="Employee picture">
+                    </picture>
+                    <h3 class="employeeCard__Heading">Signe Jensen</h3>
+                </div>
+            </div>
+        <div>
+            <h2>Online</h2>
+            <div class="grid grid-1x2 employeeCard employeeCard__Available">
+                <picture>
+                    <source type="image/webp" srcset="images/employee1.webp">
+                    <source type="image/jpeg" srcset="images/employee1.jpg">
+                    <img class="employeeCard__Image" src="images/employee1.jpg" alt="Employee picture">
+                </picture>
+                <h3 class="employeeCard__Heading">Karen Jensen</h3>
+            </div>
+            <div class="grid grid-1x2 employeeCard employeeCard__Busy">
+                <picture>
+                    <source type="image/webp" srcset="images/employee1.webp">
+                    <source type="image/jpeg" srcset="images/employee1.jpg">
+                    <img class="employeeCard__Image" src="images/employee1.jpg" alt="Employee picture">
+                </picture>
+                <h3 class="employeeCard__Heading">Martin Jensen</h3>
+            </div>
+        </div>
+        <div>
+            <h2>Fraværende</h2>
+            <div class="grid grid-1x2 employeeCard employeeCard__Busy">
+                <picture>
+                    <source type="image/webp" srcset="images/employee1.webp">
+                    <source type="image/jpeg" srcset="images/employee1.jpg">
+                    <img class="employeeCard__Image" src="images/employee1.jpg" alt="Employee picture">
+                </picture>
+                <h3 class="employeeCard__Heading">Maria Jensen</h3>
+            </div>
+        </div>
+    </div>
+        
+    </div>
+    
+</section>
+</body>
+</html>
