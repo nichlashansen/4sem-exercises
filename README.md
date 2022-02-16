@@ -6,3 +6,6 @@ show use of flex and media queries by building a simple design for at mobile fir
 
 Dashboard:
 Is a simple prototype of how the dashboard of the projekt could be and look like. made to demonstrate and build something with css
+
+Personal Site:
+NB Personal is a personal site build with Next.Js, build to try and practice what i have been learning the last weeks with css and js. Build it with components and module based css.
