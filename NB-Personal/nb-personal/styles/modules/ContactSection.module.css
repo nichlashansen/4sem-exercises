@@ -1,0 +1,41 @@
+.ContactSection__Content {
+  max-width: 400px;
+  margin: auto;
+}
+.ContactSection__Header {
+  text-align: center;
+}
+
+.ContactSection__IconGrid {
+  display: grid;
+  grid-template-columns: 40px auto;
+  column-gap: 3rem;
+  align-items: center;
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+.ContactSection__Icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-primary);
+}
+
+@media screen and (min-width: 800px) {
+  .ContactSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    max-width: 800px;
+    margin-bottom: 5rem;
+  }
+
+  .ContactSection__Content {
+    text-align: center;
+  }
+
+  .ContactSection__IconGrid {
+    align-content: center;
+    margin: auto;
+  }
+}

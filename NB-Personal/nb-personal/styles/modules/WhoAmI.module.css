@@ -1,0 +1,49 @@
+.WhoAmI__Section {
+  display: grid;
+  justify-items: center;
+}
+
+.WhoAmI__Content {
+  text-align: center;
+  max-width: 400px;
+  margin: auto;
+}
+.WhoAmI__Header {
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.WhoAmI__List {
+  padding-inline-start: 0;
+  list-style-type: none;
+}
+
+.WhoAmI__Text {
+  text-align: left;
+}
+
+.WhoAmI__ImageContainer {
+  max-width: 300px;
+}
+
+.WhoAmI__Image {
+  max-width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+}
+
+.Emphasis {
+  font-weight: 500;
+}
+
+@media screen and (min-width: 800px) {
+  .WhoAmI__Section {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .WhoAmI__ImageContainer {
+    margin-top: 2.5rem;
+  }
+}

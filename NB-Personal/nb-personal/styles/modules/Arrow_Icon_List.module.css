@@ -1,0 +1,20 @@
+.listItem {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.Icon_List__Icon {
+  justify-self: left;
+  width: 17px;
+  height: auto;
+  display: inline;
+  margin-right: 2rem;
+  padding-top: 0.2rem;
+}
+
+.Icon_List__Text {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}

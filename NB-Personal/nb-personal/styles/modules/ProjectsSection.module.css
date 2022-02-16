@@ -1,0 +1,48 @@
+.ProjectsSection {
+  background-color: var(--color-secondary);
+  padding-top: 2rem;
+  clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.ProjectsSection__Content {
+  color: var(--color-white);
+  max-width: 400px;
+  margin: auto;
+}
+
+.ProjectsSection__Header {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.ProjectsSection__IconGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: 4rem;
+  justify-items: center;
+  margin-top: 5rem;
+}
+
+.ProjectsSection__Icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-primary);
+}
+
+.ProjectsSection__Icon:hover {
+  color: #25d15e;
+}
+
+@media screen and (min-width: 800px) {
+  .ProjectsSection {
+    clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .ProjectsSection__Content {
+    max-width: 600px;
+  }
+
+  .ProjectsSection__IconGrid {
+    padding-bottom: 5rem;
+  }
+}

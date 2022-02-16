@@ -1,0 +1,31 @@
+.heroSection {
+  background-color: var(--color-primary);
+  text-align: center;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+}
+
+.hero__Content {
+  color: var(--color-white);
+  padding: 1rem;
+}
+
+.hero__Icon {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 40px;
+  height: 40px;
+}
+
+.hero__Icon:hover {
+  color: #dddddd;
+}
+
+@media screen and (min-width: 800px) {
+  .hero__Content h2 {
+    padding-bottom: 2rem;
+  }
+
+  .hero__Icon {
+    display: none;
+  }
+}
