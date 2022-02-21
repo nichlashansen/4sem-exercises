@@ -9,16 +9,16 @@ const createWindow = () => {
         //Electron shouldn't have direct access to files, so we should use a preload file to load UI/frontend
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
-        }
 
+        }
 
     })
 
     win.loadFile('index.html')
+    win.maximize();
 }
-
 app.whenReady().then(()=>{
-    createWindow();
+createWindow();
 })
 
 app.on('window-all-closed', () => {
