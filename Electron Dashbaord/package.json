@@ -1,0 +1,15 @@
+{
+  "name": "electron-dashboard",
+  "version": "1.0.0",
+  "description": "a electron app with the dashboard design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Nichlas Birkholm",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^17.0.1"
+  }
+}
