@@ -1,0 +1,58 @@
+#create a new user to use on the server and disable root. remember to update user in Hosts file after
+#need to login as root
+#currently ssh key is added as linode is added. But need task to copy public key from url to user if its not
+- name: Add new user, group to sudo
+  hosts: webservers
+  become: yes
+  vars:
+    groupName: ANSIBLE
+    userName: ansibleadmin
+  tasks:
+    - name: Create a new group
+      group:
+        name: "{{ groupName }}"
+
+    - name: add group to sudoers file
+      lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: "^%{{groupName}} ALL="
+        line: "%{{groupName}} ALL=(ALL) NOPASSWD: ALL"
+        validate: /usr/sbin/visudo -cf %s
+
+    - name: create new user and add to the group
+      user:
+        name: "{{ userName }}"
+        password_lock: yes
+        groups: "{{ groupName }}"
+        shell: /bin/bash
+
+    - name: Set authorized key for user ubuntu copying it from current user
+      ansible.posix.authorized_key:
+        user: "{{userName}}"
+        state: present
+        key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+
+    - name: disable root user
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: "^PermitRootLogin"
+        line: "PermitRootLogin no"
+        state: present
+        backup: yes
+
+    - name: add user to ssh
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: "^AllowUsers"
+        line: "AllowUsers {{userName}}"
+        state: present
+        backup: yes
+      notify:
+        - restart ssh
+
+  handlers:
+    - name: restart ssh
+      systemd:
+        name: sshd
+        state: restarted

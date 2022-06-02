@@ -1,0 +1,42 @@
+#Setup server and install docker
+# need to login as ansibleadmin remember to change in host file
+- name: upgrade packages and instal docker
+  hosts: webservers
+  vars:
+  become: yes
+  tasks:
+    - name: Install apt packages needed & update cache
+      apt:
+        pkg:
+          - aptitude
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+          - python3
+          - pip
+        state: latest
+        update_cache: true
+
+    - name: upgrade apt packages
+      apt: upgrade=yes
+
+    - name: Add docker gpt key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repo
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: true
+
+    - name: Install Docker Module for Python
+      pip:
+        name: docker
